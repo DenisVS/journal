@@ -5,7 +5,7 @@ Simple CLI journal
 ## Quick start
 
 1. Just put ```jl``` file into your PATH, or create alias in your shell.
-2. Edit section "Settings" in ```jl``` according your file store and date format.
+2. Edit section "Settings" in ```jl``` according to your file store and date format.
 
 ## Arguments
 * ```2-5``` -- range of records from last
