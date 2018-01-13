@@ -5,7 +5,7 @@ Simple CLI journal
 
 
 ```
-% ./jl
+```% ./jl
 Enter number of  or 0 to exit
 
 % ./jl +test +journal Test record 1. This is a test record 1.
@@ -13,7 +13,7 @@ Enter number of  or 0 to exit
 % ./jl                [1] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
 1
-
+_______________________________________
 Test record 1
 
 This is a test record 1.
@@ -26,7 +26,7 @@ This is a test record 1.
 [2] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
 2
-
+_______________________________________
 Test record 1
 
 This is a test record 1.
@@ -57,7 +57,7 @@ Record 3 is edited.
 [2] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
 2
-
+_______________________________________
 Test record 1
 
 This is a test record 1.
@@ -87,4 +87,6 @@ Record number 3 is deleted.
 [3] Sat 13 Jan 2018 22:18 Test record 2
 [4] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
+```
+
 ```
