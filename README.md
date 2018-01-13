@@ -1,0 +1,2 @@
+# journal
+Simple CLI journal
