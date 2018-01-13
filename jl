@@ -45,7 +45,8 @@ if [ -z "$*" -o -n "`echo $* | sed  -n '/^-[[:digit:]]\{1,9\}/ p'`" -o  -n "`ech
       COUNT=`expr ${COUNT} + 1`
     done
 
-    echo "Enter number of  or 0 to exit"
+    echo "Enter number of record to view or 0 to exit."
+    echo "e - edit, d - delete."
     read FILE_NUMBER
     
     #  Delete with parameter -d
