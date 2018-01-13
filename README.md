@@ -1,32 +1,9 @@
-# Journal
-
-Simple CLI journal
-Each record creates it's own file in the hierarchical directory structure based on the year, month, days.
-File names are based on unixtime.
-
-## Quick start
-
-1. Just put ```jl``` file into your PATH, or create alias in your shell.
-2. Edit section "Settings" in ```jl``` according to your file store and date format.
-
-## Arguments
-* ```2-5``` -- range of records from last
-* ```-4``` -- last 4 records
-* ```+MyTag It is a title of record. It is a body of record. And this is a body.```
-
-
-## Keystroke commands
-* ```5``` -- view record 3
-* ```e 4``` -- edit record 4
-* ```d 2``` -- delete record 2
-
-```
-% ./jl
+```% jl
 Enter number of  or 0 to exit
 
-% ./jl +test +journal Test record 1. This is a test record 1.
+% jl +test +journal Test record 1. This is a test record 1.
 "Test record 1" is just created.
-% ./jl                [1] Sat 13 Jan 2018 22:18 Test record 1
+% jl                [1] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
 1
 _______________________________________
@@ -35,10 +12,9 @@ Test record 1
 This is a test record 1.
 
 +test +journal
-%
-% ./jl +test +journal Test record 2. This is a test record 2.
+% jl +test +journal Test record 2. This is a test record 2.
 "Test record 2" is just created.
-% ./jl                [1] Sat 13 Jan 2018 22:18 Test record 2
+% jl                [1] Sat 13 Jan 2018 22:18 Test record 2
 [2] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
 2
@@ -48,16 +24,16 @@ Test record 1
 This is a test record 1.
 
 +test +journal
-% ./jl +mytag Test record 3. This is a test record 3.
+% jl +mytag Test record 3. This is a test record 3.
 "Test record 3" is just created.
-% ./jl                [1] Sat 13 Jan 2018 22:18 Test record 2
+% jl                [1] Sat 13 Jan 2018 22:18 Test record 2
 [2] Sat 13 Jan 2018 22:19 Test record 3
 [3] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
 
-% ./jl +mytag2 Test record 4. This is a test record 4.
+% jl +mytag2 Test record 4. This is a test record 4.
 "Test record 4" is just created.
-% ./jl                [1] Sat 13 Jan 2018 22:20 Test record 4
+% jl                [1] Sat 13 Jan 2018 22:20 Test record 4
 [2] Sat 13 Jan 2018 22:18 Test record 2
 [3] Sat 13 Jan 2018 22:19 Test record 3
 [4] Sat 13 Jan 2018 22:18 Test record 1
@@ -68,7 +44,7 @@ EDITOR HERE
 
 Record 3 is edited.
 
-% ./jl -2
+% jl -2
 [1] Sat 13 Jan 2018 22:19 Test record 3
 [2] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
@@ -80,9 +56,9 @@ This is a test record 1.
 
 +test +journal
 
-% ./jl +mytag3 Test record 5. This is a test record 5.
+% jl +mytag3 Test record 5. This is a test record 5.
 "Test record 5" is just created.
-% ./jl
+% jl
 [1] Sat 13 Jan 2018 22:22 Test record 5
 [2] Sat 13 Jan 2018 22:20 Test record 4
 [3] Sat 13 Jan 2018 22:18 Test record 2
@@ -90,22 +66,17 @@ This is a test record 1.
 [5] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
 
-% ./jl 2-4
+% jl 2-4
 [1] Sat 13 Jan 2018 22:20 Test record 4
 [2] Sat 13 Jan 2018 22:18 Test record 2
 [3] Sat 13 Jan 2018 22:19 Test record 3
 Enter number of  or 0 to exit
 d 3
 Record number 3 is deleted.
-% ./jl
+% jl
 [1] Sat 13 Jan 2018 22:22 Test record 5
 [2] Sat 13 Jan 2018 22:20 Test record 4
 [3] Sat 13 Jan 2018 22:18 Test record 2
 [4] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
-
-% ls /tmp/journal/2018/01/13
-1515867486.txt 1515867535.txt 1515867613.txt 1515867744.txt
 ```
-
-
