@@ -2,10 +2,13 @@
 
 Simple CLI journal
 
+  * 2-3 -- range of records from last
+  * -3 -- last 3 records
+
 
 
 ```
-```% ./jl
+% ./jl
 Enter number of  or 0 to exit
 
 % ./jl +test +journal Test record 1. This is a test record 1.
@@ -89,4 +92,4 @@ Record number 3 is deleted.
 Enter number of  or 0 to exit
 ```
 
-```
+
