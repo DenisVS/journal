@@ -1,3 +1,26 @@
+# Journal
+
+Simple CLI journal
+Each record creates it's own file in the hierarchical directory structure based on the year, month, days.
+File names are based on unixtime.
+
+## Quick start
+
+1. Just put ```jl``` file into your PATH, or create alias in your shell.
+2. Edit section "Settings" in ```jl``` according to your file store and date format.
+
+## Arguments
+* ```2-5``` -- range of records from last
+* ```-4``` -- last 4 records
+* ```+MyTag It is a title of record. It is a body of record. And this is a body.```
+
+
+## Keystroke commands
+* ```5``` -- view record 3
+* ```e 4``` -- edit record 4
+* ```d 2``` -- delete record 2
+
+
 ```% jl
 Enter number of record to view or 0 to exit.
 e - edit, d - delete.
