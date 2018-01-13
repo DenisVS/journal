@@ -3,7 +3,7 @@
 Simple CLI journal
 
 
-##Arguments
+## Arguments
   * ```2-5``` -- range of records from last
   * ```-4``` -- last 4 records
   * ```+MyTag It is a title of record. It is a body of record. And this is a body.```
