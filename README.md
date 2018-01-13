@@ -4,11 +4,15 @@ Simple CLI journal
 
 
 ## Arguments
-  * ```2-5``` -- range of records from last
-  * ```-4``` -- last 4 records
-  * ```+MyTag It is a title of record. It is a body of record. And this is a body.```
+* ```2-5``` -- range of records from last
+* ```-4``` -- last 4 records
+* ```+MyTag It is a title of record. It is a body of record. And this is a body.```
 
 
+## Arguments
+* ```5``` -- view record 3
+* ```e 4``` -- edit record 4
+* ```d 2``` -- delete record 2
 
 ```
 % ./jl
