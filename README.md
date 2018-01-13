@@ -11,7 +11,9 @@ Enter number of  or 0 to exit
 
 % ./jl +test +journal Test record 1. This is a test record 1.
 "Test record 1" is just created.
-% ./jl                \[1] Sat 13 Jan 2018 22:18 Test record 1
+% ./jl                
+
+[1] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
 1
 _______________________________________
