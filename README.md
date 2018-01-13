@@ -15,7 +15,7 @@ File names are based on unixtime.
 * ```+MyTag It is a title of record. It is a body of record. And this is a body.```
 
 
-## keystroke commands
+## Keystroke commands
 * ```5``` -- view record 3
 * ```e 4``` -- edit record 4
 * ```d 2``` -- delete record 2
