@@ -1,6 +1,8 @@
 # Journal
 
 Simple CLI journal
+Each record creates it's own file in the hierarchical directory structure based on the year, month, days.
+File names are based on unixtime.
 
 ## Quick start
 
@@ -101,6 +103,9 @@ Record number 3 is deleted.
 [3] Sat 13 Jan 2018 22:18 Test record 2
 [4] Sat 13 Jan 2018 22:18 Test record 1
 Enter number of  or 0 to exit
+
+% ls /tmp/journal/2018/01/13
+1515867486.txt 1515867535.txt 1515867613.txt 1515867744.txt
 ```
 
 
