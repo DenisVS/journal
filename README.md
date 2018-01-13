@@ -2,8 +2,9 @@
 
 Simple CLI journal
 
-  * 2-3 -- range of records from last
-  * -3 -- last 3 records
+  * ```2-5``` -- range of records from last
+  * ```-4``` -- last 4 records
+  * ```+MyTag It is a title of record. It is a body of record. And this is a body.```
 
 
 
