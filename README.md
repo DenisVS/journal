@@ -2,6 +2,9 @@
 
 Simple CLI journal
 
+## Quick start
+
+Just put ```jl``` file into your PATH, or create alias in your shell.
 
 ## Arguments
 * ```2-5``` -- range of records from last
