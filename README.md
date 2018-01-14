@@ -1,6 +1,7 @@
 # Journal
 
-Simple CLI journal
+### Simple CLI journal
+
 Each record creates it's own file in the hierarchical directory structure based on the year, month, days.
 File names are based on unixtime.
 
@@ -16,7 +17,7 @@ File names are based on unixtime.
 
 
 ## Keystroke commands
-* ```5``` -- view record 3
+* ```5``` -- view record 5
 * ```e 4``` -- edit record 4
 * ```d 2``` -- delete record 2
 
