@@ -17,11 +17,11 @@ convUnixTime ()   {
 # Either no argument or -13 or 1-34
 if [ -z "$*" -o -n "`echo $* | sed  -n '/^-[[:digit:]]\{1,9\}/ p'`" -o  -n "`echo $* | sed  -n '/^[[:digit:]]\{1,9\}-[[:digit:]]\{1,9\}/p'`" ]; then
 
-    FILES_LIST=`find "${PATH_JL}" -name '*.txt'`
+    FILES_LIST=`find "${PATH_JL}" -name '*.txt' | sort -dr`
 
     # truncate list by number arg "-12"
     if [ -n "`echo $* | sed  -n '/^-[[:digit:]]\{1,9\}/ p'`" ]; then
-        FILES_LIST=`echo "${FILES_LIST}"  | tail -n "$*"`
+        FILES_LIST=`echo "${FILES_LIST}"  | head "$*" | sort -dr`
     fi
 
     # truncate list by number arg  "5-34"
@@ -32,7 +32,7 @@ if [ -z "$*" -o -n "`echo $* | sed  -n '/^-[[:digit:]]\{1,9\}/ p'`" -o  -n "`ech
         TAIL=`expr ${COUNT_RECORDS} - $START_NUM + 1`
         FILES_LIST=`echo "${FILES_LIST}" | tail -n "${TAIL}"`
         HEAD=`expr "$END_NUM" - "$START_NUM" + 1`
-        FILES_LIST=`echo "${FILES_LIST}" | head -n "${HEAD}"`
+        FILES_LIST=`echo "${FILES_LIST}"  | sort -dr | head -n "${HEAD}"`
     fi
 
     # Listing constrained by number + HEAD
@@ -44,14 +44,15 @@ if [ -z "$*" -o -n "`echo $* | sed  -n '/^-[[:digit:]]\{1,9\}/ p'`" -o  -n "`ech
       echo \[${COUNT}] `convUnixTime "$UNIXTIME"`	"${COMMENT}"
       COUNT=`expr ${COUNT} + 1`
     done
-
+   
     echo "Enter number of record to view or 0 to exit."
     echo "e - edit, d - delete."
-    read FILE_NUMBER
+
+    read RECORD_NUMBER
     
     #  Delete with parameter -d
-    if [ -n "`echo ${FILE_NUMBER} | sed  -n '/^d / p'`" ]; then
-        NUM_FILE=`echo "${FILE_NUMBER}" | awk '{print $2}'`
+    if [ -n "`echo ${RECORD_NUMBER} | sed  -n '/^d / p'`" ]; then
+        NUM_FILE=`echo "${RECORD_NUMBER}" | awk '{print $2}'`
         COUNT=1
         for FILE_NAME in ${FILES_LIST}; do
             if  [ "${COUNT}" = "${NUM_FILE}" ]; then
@@ -63,9 +64,9 @@ if [ -z "$*" -o -n "`echo $* | sed  -n '/^-[[:digit:]]\{1,9\}/ p'`" -o  -n "`ech
     fi
 
     #  Edit with parameter -e
-    if [ -n "`echo ${FILE_NUMBER} | sed  -n '/^e / p'`" ]; then
+    if [ -n "`echo ${RECORD_NUMBER} | sed  -n '/^e / p'`" ]; then
 
-        NUM_FILE=`echo "${FILE_NUMBER}" | awk '{print $2}'`
+        NUM_FILE=`echo "${RECORD_NUMBER}" | awk '{print $2}'`
 
         COUNT=1
         for FILE_NAME in ${FILES_LIST}; do
@@ -80,7 +81,7 @@ if [ -z "$*" -o -n "`echo $* | sed  -n '/^-[[:digit:]]\{1,9\}/ p'`" -o  -n "`ech
     #  Cat without parameters
     COUNT=1
     for FILE_NAME in ${FILES_LIST}; do
-	if  [ "${COUNT}" = "${FILE_NUMBER}" ]; then
+	if  [ "${COUNT}" = "${RECORD_NUMBER}" ]; then
             echo '_______________________________________'
             cat "${FILE_NAME}"
 	fi
