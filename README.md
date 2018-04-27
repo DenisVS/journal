@@ -14,7 +14,7 @@ File names are based on unixtime.
 * ```2-5``` -- range of records from last
 * ```-4``` -- last 4 records
 * ```+MyTag It is a title of record. It is a body of record. And this is a body.```
-
+* ```-c``` -- Create and edit new file instantly without name.
 
 ## Keystroke commands
 * ```5``` -- view record 5
